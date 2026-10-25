@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bean There | Coffee &amp; study spot in Cabuyao</title>
+  <meta name="description" content="Bean There is a new cafe in Cabuyao with a ground-floor tambayan and a second-floor study area. Get a free pastry with any drink this November.">
+  <meta name="theme-color" content="#354024">
+  <!-- Tiny built-in coffee icon for the browser tab, so there is no image file to lose -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%98%95%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Fredoka = chunky rounded headings, Nunito = easy-to-read body, Cormorant Garamond = hero tagline, Montserrat = small labels -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,500;1,600&family=Fredoka:wght@500;600;700&family=Montserrat:wght@600;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="has-hero">
+  <a class="skip" href="#main">Skip to content</a>
+
+  <!-- ===== TOP NAVIGATION ===== -->
+  <header class="nav" id="top">
+    <a class="nav__brand" href="#top" aria-label="Bean There, back to top">
+      <img src="assets/logo-tan.png" alt="Bean There, est. 2026" width="705" height="625">
+    </a>
+    <button class="nav__toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open navigation">&#9776;</button>
+    <nav id="site-nav" class="nav__links" aria-label="Main">
+      <a href="#menu-section">Menu</a>
+      <a href="#spaces">Our Spaces</a>
+      <a href="#visit">Visit</a>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <!-- ===== HERO (animated beans live here) ===== -->
+    <section class="hero" aria-labelledby="hero-title">
+      <!-- Background layer: optional video, then falling beans. Decorative only. -->
+      <div class="hero__bg" aria-hidden="true">
+        <!-- OPTIONAL: add assets/video/beans.mp4 (and beans.webm) and uncomment. script.js skips it for reduced motion. -->
+        <!--
+        <video class="hero__video" autoplay muted loop playsinline preload="metadata" poster="assets/beans/hero-poster.jpg">
+          <source src="assets/video/beans.webm" type="video/webm">
+          <source src="assets/video/beans.mp4" type="video/mp4">
+        </video>
+        -->
+        <div class="beans" id="beans"></div>
+        <div class="hero__vignette"></div>
+      </div>
+
+      <div class="hero__inner">
+        <h1 id="hero-title" class="visually-hidden">Bean There</h1>
+        <img class="hero__logo" src="assets/logo-tan.png" alt="Bean There, est. 2026" width="705" height="625">
+        <p class="hero__tagline">We’ve bean waiting for you.</p>
+        <div class="hero__actions">
+          <a class="btn btn--tan" href="#menu-section">Explore Our Menu</a>
+          <a class="btn btn--outline" href="#promo">Claim Your Free Pastry</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== YOUR COFFEE, YOUR SIZE ===== -->
+    <section class="sizes" id="sizes" aria-labelledby="sizes-title">
+      <div class="wrap">
+        <p class="eyebrow">Hot coffee, sip lid, no straw</p>
+        <h2 id="sizes-title">Your Coffee, Your Size</h2>
+        <p class="section-lead">From a quick pick-me-up to a long study session, there’s a Bean There cup that fits.</p>
+
+        <figure class="cups">
+          <!-- Your cup photo: assets/cups.jpg (Small left, Medium center, Large right) -->
+          <img id="cups-img" class="cups__photo" src="assets/cups.jpg" width="1024" height="1536" alt="Three plain brown Bean There coffee cups with dark green sip lids, from left to right: small, medium and large.">
+
+          <!-- Labels: left, center, right, matching the order of the cups -->
+          <ul class="cups__labels">
+            <li><strong>Small</strong><span>A quick pick-me-up</span></li>
+            <li><strong>Medium</strong><span>Our everyday cup</span></li>
+            <li><strong>Large</strong><span>For long study sessions</span></li>
+          </ul>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ===== MENU (all six categories are always visible, no tabs) ===== -->
+    <section class="menu" id="menu-section" aria-labelledby="menu-title">
+      <div class="wrap">
+        <p class="eyebrow">Freshly made for you</p>
+        <h2 id="menu-title">Our Menu</h2>
+      </div>
+
+      <!-- Category navigation: sticks under the main nav and scrolls sideways on small screens -->
+      <nav class="catnav" id="catnav" aria-label="Menu categories">
+        <div class="catnav__scroll">
+          <a href="#cat-coffee">Coffee</a>
+          <a href="#cat-frappes">Frappes</a>
+          <a href="#cat-matcha">Matcha Series</a>
+          <a href="#cat-refreshers">Refreshers</a>
+          <a href="#cat-pastries">Pastries</a>
+          <a href="#cat-cakes">Cakes</a>
+        </div>
+      </nav>
+
+      <!-- script.js builds the six sections here from the MENU list -->
+      <div class="wrap" id="menu-root">
+        <noscript><p>Please turn on JavaScript to see our menu.</p></noscript>
+      </div>
+    </section>
+
+    <!-- ===== FREE PASTRY PROMO ===== -->
+    <section class="promo" id="promo" aria-labelledby="promo-title">
+      <div class="wrap promo__grid">
+        <div class="promo__copy">
+          <h2 id="promo-title">Free pastry with any drink</h2>
+          <p>Order any drink during our redeem hours and a pastry is on us. It runs from November 3 to 30, 2026.</p>
+          <ul class="promo__list">
+            <li><strong>Days:</strong> Monday, Wednesday, Friday</li>
+            <li><strong>Time:</strong> 1:00 PM to 3:30 PM</li>
+            <li><strong>Dates:</strong> November 3 to 30, 2026</li>
+          </ul>
+          <h3>How to claim</h3>
+          <ol class="steps">
+            <li>Find our launch promo post on Facebook or Instagram.</li>
+            <li>Show the post to the cashier when you order a drink.</li>
+            <li>Pick your free pastry and find a seat.</li>
+          </ol>
+          <p class="fine">One free pastry per drink. Show the promo post at the counter to redeem.</p>
+        </div>
+
+        <aside class="ticket" aria-live="polite" aria-label="Promo status">
+          <div class="ticket__status" id="status-pill">Checking…</div>
+          <p class="ticket__big" id="status-title">Is the promo on right now?</p>
+          <p class="ticket__small" id="status-detail">One moment while we check the schedule.</p>
+          <div class="ticket__count" id="countdown" hidden>
+            <div><span id="cd-d">0</span><small>days</small></div>
+            <div><span id="cd-h">00</span><small>hrs</small></div>
+            <div><span id="cd-m">00</span><small>min</small></div>
+            <div><span id="cd-s">00</span><small>sec</small></div>
+          </div>
+          <div class="ticket__week" id="week" role="list" aria-label="Redeem days this week"></div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ===== OUR SPACES ===== -->
+    <section class="spaces" id="spaces" aria-labelledby="spaces-title">
+      <div class="wrap">
+        <p class="eyebrow">Explore the cafe</p>
+        <h2 id="spaces-title">Two floors, two moods</h2>
+        <p class="section-lead">Pick the floor that matches what you came to do.</p>
+
+        <div class="tabs" role="tablist" aria-label="Cafe floors">
+          <button role="tab" id="tab-ground" aria-selected="true" aria-controls="panel-ground">Ground floor</button>
+          <button role="tab" id="tab-second" aria-selected="false" aria-controls="panel-second" tabindex="-1">Second floor</button>
+        </div>
+
+        <!-- Ground floor: photo = assets/tambayan.jpg -->
+        <div class="panel" role="tabpanel" id="panel-ground" aria-labelledby="tab-ground">
+          <figure class="panel__photo">
+            <img src="assets/tambayan.jpg" width="1318" height="980" alt="The Bean There tambayan: green walls, warm hanging lights, round tables, cushioned seating and a wooden floor." loading="lazy">
+          </figure>
+          <div class="panel__text">
+            <p class="panel__floor">Ground floor</p>
+            <h3>The Tambayan</h3>
+            <p class="panel__lead">Your spot for coffee, conversations, and catching up with your barkada.</p>
+            <ul>
+              <li>Easy to drop in after class</li>
+              <li>Great for hangouts and small groups</li>
+              <li>Photo-friendly corners</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Second floor: photo = assets/study-area.png -->
+        <div class="panel" role="tabpanel" id="panel-second" aria-labelledby="tab-second" hidden>
+          <figure class="panel__photo">
+            <img src="assets/study-area.png" width="1537" height="1023" alt="The Bean There study area: dark green walls, a wooden floor and long wooden desks beside bright windows." loading="lazy">
+          </figure>
+          <div class="panel__text">
+            <p class="panel__floor">Second floor</p>
+            <h3>The Study Area</h3>
+            <p class="panel__lead">A cozy corner to focus, study, and work on your next big idea.</p>
+            <ul>
+              <li>A calmer space for studying</li>
+              <li>Room for group projects</li>
+              <li>Away from the distractions at home</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== WHY BEAN THERE ===== -->
+    <section class="why" id="why" aria-labelledby="why-title">
+      <div class="wrap">
+        <h2 id="why-title">Made for students who study in cafes</h2>
+        <div class="why__grid">
+          <article>
+            <h3>Friendly on the allowance</h3>
+            <p>Our launch offer means your drink comes with a pastry, so a coffee break goes further.</p>
+          </article>
+          <article>
+            <h3>Two places in one</h3>
+            <p>Hang out downstairs or study upstairs without having to pick a different cafe.</p>
+          </article>
+          <article>
+            <h3>A spot worth posting</h3>
+            <p>Tag us on Facebook or Instagram and show everyone where you’ve bean.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SOCIAL LINKS ===== -->
+    <section class="follow" aria-labelledby="follow-title">
+      <div class="wrap follow__inner">
+        <div>
+          <h2 id="follow-title">Follow us for the promo post</h2>
+          <p>You’ll need our launch promo post to redeem your free pastry. Find it on our pages and keep it handy on your phone.</p>
+        </div>
+        <div class="follow__links">
+          <a class="btn btn--cream" href="#" data-social="facebook" rel="noopener">Facebook: Bean There</a>
+          <a class="btn btn--ghost" href="#" data-social="instagram" rel="noopener">Instagram: @beanthere</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== VISIT ===== -->
+    <section class="visit" id="visit" aria-labelledby="visit-title">
+      <div class="wrap visit__grid">
+        <div>
+          <h2 id="visit-title">Come say hi</h2>
+          <p>Bean There is in Cabuyao, Laguna. We’ve bean waiting for you.</p>
+          <dl class="info">
+            <dt>Location</dt>
+            <dd>Cabuyao, Laguna <span class="todo">(add street address)</span></dd>
+            <dt>Free pastry hours</dt>
+            <dd>Mon, Wed, Fri, 1:00 PM to 3:30 PM</dd>
+            <dt>Opening hours</dt>
+            <dd><span class="todo">(add daily hours)</span></dd>
+          </dl>
+        </div>
+        <form class="notify" id="notify" novalidate>
+          <h3>Get a reminder</h3>
+          <p>Leave your name and we’ll save you a seat. This demo form doesn’t send anything yet.</p>
+          <label for="name">Your name</label>
+          <input id="name" name="name" type="text" autocomplete="given-name" required>
+          <label for="day">Which day will you come?</label>
+          <select id="day" name="day">
+            <option>Monday</option>
+            <option>Wednesday</option>
+            <option>Friday</option>
+          </select>
+          <button class="btn btn--dark" type="submit">Save my seat</button>
+          <p class="notify__msg" id="notify-msg" role="status"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <img src="assets/logo.png" alt="Bean There" width="705" height="625">
+    <p>We’ve bean waiting for you.</p>
+    <p class="footer__small">&copy; 2026 Bean There. Cabuyao, Laguna.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
